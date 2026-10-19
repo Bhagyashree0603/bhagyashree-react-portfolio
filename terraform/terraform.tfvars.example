@@ -1,0 +1,9 @@
+# Copy this file to terraform.tfvars and replace both example values.
+# key_name must be an EC2 key pair that already exists in ap-south-1.
+key_name  = "YOUR_EXISTING_EC2_KEY_PAIR_NAME"
+admin_cidr = "203.0.113.10/32"
+
+# Optional overrides:
+# aws_region           = "ap-south-1"
+# jenkins_instance_type = "t3.small"
+# deploy_instance_type  = "t3.micro"
