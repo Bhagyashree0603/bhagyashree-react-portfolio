@@ -77,6 +77,7 @@ Get the instance addresses:
 terraform output
 terraform output -raw jenkins_public_ip
 terraform output -raw deploy_public_ip
+terraform output -raw deploy_private_ip
 terraform output -raw jenkins_url
 terraform output -raw portfolio_url
 ```
@@ -144,7 +145,7 @@ Pipeline stages: checkout → validate files → build Docker image → authenti
 
 - **Jenkins URL not opening:** check the Jenkins EC2 security group allows TCP 8080 from your current public IP, wait for bootstrap to finish, and inspect `/var/log/jenkins-bootstrap.log` over SSH.
 - **ECR access denied:** confirm the Jenkins instance profile is attached and the instance role has ECR push permissions. Confirm region and repository name match.
-- **SSH deployment fails:** verify the `deploy-ec2-ssh` credential contains the correct `.pem` private key and username `ec2-user`; confirm the deploy host is the Terraform `deploy_public_ip` and both instances are running.
+- **SSH deployment fails:** verify the `deploy-ec2-ssh` credential contains the correct `.pem` private key and username `ec2-user`; confirm the deploy host is the Terraform `deploy_private_ip` and both instances are running.
 - **Docker permission denied:** wait for User Data to finish, then reconnect to the instance. The bootstrap script adds `ec2-user` and `jenkins` to the Docker group.
 - **Website not opening:** check the deploy EC2 security group allows TCP 80 and inspect the container with `docker ps` and `docker logs bhagyashree-portfolio` over SSH.
 - **User Data logs:** `/var/log/cloud-init-output.log`, `/var/log/jenkins-bootstrap.log`, and `/var/log/deploy-bootstrap.log`.

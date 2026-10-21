@@ -29,11 +29,11 @@ variable "admin_cidr" {
 variable "jenkins_instance_type" {
   description = "EC2 size for Jenkins; t3.small is a low-cost starter but may feel slow"
   type        = string
-  default     = "t3.small"
+  default     = "t3.medium"
 }
 
 variable "deploy_instance_type" {
   description = "EC2 size for the portfolio deployment host"
   type        = string
-  default     = "t3.micro"
+  default     = "t3.medium"
 }

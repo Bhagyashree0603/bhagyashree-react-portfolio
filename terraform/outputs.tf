@@ -22,3 +22,8 @@ output "ecr_repository_url" {
   description = "Amazon ECR repository URL"
   value       = aws_ecr_repository.portfolio.repository_url
 }
+
+output "deploy_private_ip" {
+  description = "Private IPv4 address used by Jenkins to SSH within the VPC"
+  value       = aws_instance.deploy.private_ip
+}

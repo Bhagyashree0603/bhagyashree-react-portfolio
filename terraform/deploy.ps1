@@ -52,7 +52,7 @@ try {
     terraform apply -auto-approve
     if ($LASTEXITCODE -ne 0) { throw "terraform apply failed. Check the error above." }
 
-    Write-Host "Infrastructure created. Copy deploy_public_ip into the Jenkins job's DEPLOY_HOST parameter." -ForegroundColor Green
+    Write-Host "Infrastructure created. Copy deploy_private_ip into the Jenkins job's DEPLOY_HOST parameter. Use deploy_public_ip only for opening the website in a browser." -ForegroundColor Green
     terraform output
 }
 finally {

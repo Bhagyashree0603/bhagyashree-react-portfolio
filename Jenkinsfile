@@ -16,7 +16,7 @@ pipeline {
         string(
             name: 'DEPLOY_HOST',
             defaultValue: '',
-            description: 'Paste the deploy_public_ip value from terraform output.'
+            description: 'Paste the deploy_private_ip value from terraform output (Jenkins connects over the VPC private network).'
         )
     }
 
@@ -60,7 +60,7 @@ pipeline {
             steps {
                 script {
                     if (!params.DEPLOY_HOST?.trim()) {
-                        error('DEPLOY_HOST is empty. Enter the deploy_public_ip from terraform output and run again.')
+                        error('DEPLOY_HOST is empty. Enter the deploy_private_ip from terraform output and run again.')
                     }
                     env.AWS_ACCOUNT_ID = sh(
                         script: 'aws sts get-caller-identity --query Account --output text',
