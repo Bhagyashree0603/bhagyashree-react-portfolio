@@ -1,0 +1,20 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bhagyashree-portfolio
+  labels:
+    app: bhagyashree-portfolio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bhagyashree-portfolio
+  template:
+    metadata:
+      labels:
+        app: bhagyashree-portfolio
+    spec:
+      containers:
+        - name: bhagyashree-portfolio
+          image: bhagyashree-portfolio:v3
+          imagePullPolicy: IfNotPresent
