@@ -26,3 +26,8 @@ pnpm-debug.log*
 pnpm-error.log*
 lerna-debug.log*
 *.log
+
+Windows-SSD (C).lnk
+
+# Jenkins backup files
+jenkins_home_backup.tar.gz
