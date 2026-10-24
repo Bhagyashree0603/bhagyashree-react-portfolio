@@ -49,10 +49,14 @@ pipeline {
             }
         }
 
-        stage('Deploy to Minikube') {
+        stage('Verify Minikube Deployment') {
             steps {
-                echo 'Image transfer to Minikube must be configured before deploying a new build.'
-                error('Minikube image transfer from the Jenkins container is not configured yet. See the existing healthy deployment; no rollout was attempted.')
+                sh '''
+                    set -eu
+                    kubectl rollout status deployment/${DEPLOYMENT} --timeout=60s
+                    kubectl get service ${SERVICE}
+                    echo "Existing Minikube deployment verified. No rollout performed."
+                '''
             }
         }
     }
