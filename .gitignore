@@ -31,3 +31,8 @@ Windows-SSD (C).lnk
 
 # Jenkins backup files
 jenkins_home_backup.tar.gz
+
+# Local Terraform plans and backups
+terraform/tfplan
+terraform/refresh.tfplan
+jenkins-home-backup.tar.gz
