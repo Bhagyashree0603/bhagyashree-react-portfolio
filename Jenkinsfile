@@ -1,4 +1,4 @@
-pipeline {
+﻿pipeline {
     agent any
 
     options {
@@ -49,13 +49,13 @@ pipeline {
             }
         }
 
-        stage('Verify Minikube Deployment') {
+        stage('Deploy to Minikube') {
             steps {
                 sh '''
                     set -eu
-                    kubectl rollout status deployment/${DEPLOYMENT} --timeout=60s
+                    kubectl set image deployment/${DEPLOYMENT} ${CONTAINER}=${APP_NAME}:jenkins-3
+                    kubectl rollout status deployment/${DEPLOYMENT} --timeout=120s
                     kubectl get service ${SERVICE}
-                    echo "Existing Minikube deployment verified. No rollout performed."
                 '''
             }
         }
@@ -70,3 +70,4 @@ pipeline {
         }
     }
 }
+
