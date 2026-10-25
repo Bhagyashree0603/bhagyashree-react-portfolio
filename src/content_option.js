@@ -1,3 +1,16 @@
+﻿import awsImg from "./assets/images/projects/aws.png";
+import devopsIllustration from "./assets/images/projects/a_clean_high_resolution_isolated_logo_style_illu.png";
+import dockerImg from "./assets/images/projects/docker.png";
+import githubImg from "./assets/images/projects/github.png";
+import grafanaImg from "./assets/images/projects/grafana.png";
+import projectImg1 from "./assets/images/projects/image_475d73b8.jpg";
+import projectImg2 from "./assets/images/projects/image_84c893eb (1).jpg";
+import jenkinsImg from "./assets/images/projects/jenkins.png";
+import kubernetesImg from "./assets/images/projects/kubernetes.png";
+import devopsGridImg from "./assets/images/projects/Neon DevOps Icon Grid.png";
+import prometheusImg from "./assets/images/projects/prometheus (1).png";
+import terraformImg from "./assets/images/projects/terraform.png";
+
 const logotext = "Bhagyashree";
 const meta = {
     title: "Bhagyashree Manglekar | Portfolio",
@@ -5,7 +18,7 @@ const meta = {
 };
 
 const introdata = {
-    title: "I’m Bhagyashree Manglekar",
+    title: "I am Bhagyashree Manglekar",
     animated: {
         first: "I build React applications",
         second: "I explore AWS and DevOps",
@@ -72,67 +85,19 @@ const services = [{
     },
 ];
 
-const dataportfolio = [{
-        img: "https://picsum.photos/400/?grayscale",
-        description: "Replace this card with a summary of one of your projects.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/800/?grayscale",
-        description: "Replace this card with a summary of one of your projects.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "Replace this card with a summary of one of your projects.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/600/?grayscale",
-        description: "Replace this card with a summary of one of your projects.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/300/?grayscale",
-        description: "Replace this card with a summary of one of your projects.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/700/?grayscale",
-        description: "Replace this card with a summary of one of your projects.",
-        link: "#",
-    },
-
-    {
-        img: "https://picsum.photos/400/600/?grayscale",
-        description: "Replace this card with a summary of one of your projects.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/300/?grayscale",
-        description: "Replace this card with a summary of one of your projects.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "Replace this card with a summary of one of your projects.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/550/?grayscale",
-        description: "Replace this card with a summary of one of your projects.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "Replace this card with a summary of one of your projects.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/700/?grayscale",
-        description: "Replace this card with a summary of one of your projects.",
-        link: "#",
-    },
+const dataportfolio = [
+    { img: devopsGridImg, description: "DevOps Tools Overview", link: "#" },
+    { img: githubImg, description: "Git and GitHub", link: "https://github.com/Bhagyashree0603" },
+    { img: dockerImg, description: "Docker Containerization", link: "#" },
+    { img: jenkinsImg, description: "Jenkins CI/CD Pipeline", link: "#" },
+    { img: kubernetesImg, description: "Kubernetes Deployment", link: "#" },
+    { img: terraformImg, description: "Terraform Infrastructure as Code", link: "#" },
+    { img: awsImg, description: "AWS Cloud Projects", link: "#" },
+    { img: prometheusImg, description: "Prometheus Monitoring", link: "#" },
+    { img: grafanaImg, description: "Grafana Dashboards", link: "#" },
+    { img: devopsIllustration, description: "DevOps Engineering", link: "#" },
+    { img: projectImg1, description: "DevOps Project", link: "#" },
+    { img: projectImg2, description: "React Portfolio Project", link: "#" },
 ];
 
 const contactConfig = {
@@ -164,3 +129,4 @@ export {
     socialprofils,
     logotext,
 };
+
