@@ -1,86 +1,166 @@
+
+/* ===== Premium DevOps Follow Me Icons ===== */
+
 .stick_follow_icon {
     top: 50%;
-    left: 30px;
-    width: 20px;
-    height: 200px;
+    left: 24px;
+    width: 42px;
+    height: 240px;
     position: fixed;
-    margin-top: -100px;
+    z-index: 1000;
+    margin-top: -120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.stick_follow_icon ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.stick_follow_icon svg {
-    width: 1.3em;
-    height: 1.3em;
-    fill: var(--text-color)
-}
-
+/* FOLLOW ME label */
 .stick_follow_icon p {
-    top: 70px;
-    left: -24px;
-    width: 68px;
+    top: 72px;
+    left: -14px;
+    width: 70px;
     height: 20px;
-    color: var(--text-color);
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.2;
+    color: #55ceff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
     white-space: nowrap;
     position: relative;
-    transform: rotate( -90deg);
+    transform: rotate(-90deg);
 }
 
-.stick_follow_icon ul li {
-    display: block;
-    font-size: 12px;
-    text-align: center;
-    margin-bottom: 10px;
-    transition: all .3s;
-}
-
-.stick_follow_icon p:after {
+.stick_follow_icon p::after {
     top: 9px;
-    right: -48px;
-    width: 40px;
+    right: -46px;
+    width: 34px;
     height: 1px;
     content: "";
     display: block;
     position: absolute;
-    background-color: var(--text-color);
+    background: linear-gradient(90deg, #087cff, #00d4ff);
+    box-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
 }
 
+/* Social icon list */
+.stick_follow_icon ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stick_follow_icon ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 12px;
+    transition: transform 0.25s ease;
+}
+
+/* Icon circles */
+.stick_follow_icon ul li a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(77, 163, 255, 0.32);
+    border-radius: 50%;
+    background: rgba(7, 20, 42, 0.88);
+    color: #c8e8ff;
+    text-decoration: none;
+    transition: color 0.25s ease, background 0.25s ease,
+        border-color 0.25s ease, box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.stick_follow_icon ul li svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    color: inherit;
+    transition: filter 0.25s ease;
+}
+
+/* Hover glow */
+.stick_follow_icon ul li:hover {
+    transform: translateX(4px);
+}
+
+.stick_follow_icon ul li a:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #087cff, #00bdf2);
+    border-color: #58d5ff;
+    box-shadow: 0 0 12px rgba(0, 170, 255, 0.45),
+        0 0 24px rgba(0, 140, 255, 0.18);
+}
+
+.stick_follow_icon ul li a:hover svg {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+
+/* Keyboard accessibility */
+.stick_follow_icon ul li a:focus-visible {
+    outline: 2px solid #55ceff;
+    outline-offset: 4px;
+}
+
+/* Mobile and tablet */
 @media only screen and (max-width: 991px) {
     .stick_follow_icon {
-        width: unset;
-        height: unset;
+        width: 100%;
+        height: auto;
         position: static;
-        margin-top: unset;
+        margin: 0;
+        padding: 28px 16px;
         display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-        padding: 40px 0;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
+        gap: 18px;
     }
+
     .stick_follow_icon p {
-        top: unset;
-        left: unset;
-        width: unset;
-        height: unset;
-        white-space: nowrap;
         position: relative;
-        transform: unset;
-        font-size: 17px;
-        margin-right: 65px;
+        inset: auto;
+        width: auto;
+        height: auto;
+        margin: 0;
+        transform: none;
+        font-size: 11px;
+        letter-spacing: 2px;
     }
+
+    .stick_follow_icon p::after {
+        display: none;
+    }
+
     .stick_follow_icon ul {
-        margin-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin: 0;
     }
+
     .stick_follow_icon ul li {
-        display: inline;
-        margin-bottom: 29px;
-        margin-right: 10px;
+        display: flex;
+        margin: 0;
+    }
+
+    .stick_follow_icon ul li:hover {
+        transform: translateY(-3px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stick_follow_icon ul li,
+    .stick_follow_icon ul li a,
+    .stick_follow_icon ul li svg {
+        transition: none;
     }
 }

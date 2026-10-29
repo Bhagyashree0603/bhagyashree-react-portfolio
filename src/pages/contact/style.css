@@ -1,32 +1,130 @@
+
+/* ===== Premium DevOps Blue Glow Contact Section ===== */
+
+.contact__form {
+    position: relative;
+    padding: 30px;
+    border: 1px solid rgba(0, 170, 255, 0.22);
+    border-radius: 20px;
+    background: linear-gradient(
+        145deg,
+        rgba(10, 24, 48, 0.96),
+        rgba(5, 12, 28, 0.98)
+    );
+    box-shadow:
+        0 0 25px rgba(0, 140, 255, 0.10),
+        inset 0 0 20px rgba(0, 140, 255, 0.035);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact__form:hover {
+    border-color: rgba(0, 170, 255, 0.42);
+    box-shadow:
+        0 0 30px rgba(0, 140, 255, 0.16),
+        inset 0 0 20px rgba(0, 140, 255, 0.045);
+}
+
 .contact__form .form-control {
-    padding: 1.375rem .75rem;
+    padding: 1rem 1rem;
     line-height: 1.5;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    border-radius: 0 !important;
-    border: 1px solid var(--secondary-color);
+    color: #eaf6ff;
+    background-color: rgba(8, 20, 40, 0.9);
+    border: 1px solid rgba(77, 163, 255, 0.32);
+    border-radius: 10px !important;
+    outline: none;
+    box-shadow: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.contact__form .form-control::placeholder {
+    color: #8299b7;
+    opacity: 1;
+}
+
+.contact__form .form-control:focus {
+    color: #ffffff;
+    background-color: rgba(10, 28, 54, 0.98);
+    border-color: #20baff;
+    box-shadow: 0 0 0 3px rgba(32, 186, 255, 0.10),
+        0 0 18px rgba(0, 153, 255, 0.18);
 }
 
 .contact__form input.form-control {
-    margin-bottom: 2em;
-    height: calc(2.5em + .75rem + 2px);
+    margin-bottom: 1.25rem;
+    height: 3.4rem;
 }
 
-button.btn.ac_btn:hover {
-    color: var(--secondary-color);
+.contact__form textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
 }
 
+/* Blue glow Send button */
+.contact__form button.btn.ac_btn {
+    position: relative;
+    padding: 12px 32px;
+    color: #ffffff;
+    background: linear-gradient(100deg, #087cff, #00c6ff);
+    border: 1px solid rgba(110, 218, 255, 0.7);
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 15px rgba(0, 153, 255, 0.22);
+    transition: transform 0.25s ease, box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.contact__form button.btn.ac_btn:hover {
+    color: #ffffff;
+    background: linear-gradient(100deg, #0066e6, #00a9e8);
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px rgba(0, 170, 255, 0.42);
+}
+
+.contact__form button.btn.ac_btn:active {
+    transform: translateY(0);
+}
+
+.contact__form button.btn.ac_btn:focus-visible {
+    outline: 2px solid #7ce8ff;
+    outline-offset: 4px;
+}
+
+/* Contact details */
+.color_sec {
+    color: #48caff;
+    text-shadow: 0 0 12px rgba(0, 170, 255, 0.16);
+}
+
+address a {
+    color: #58c8ff;
+    text-decoration: none;
+    transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+address a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(0, 170, 255, 0.65);
+}
+
+.co_alert {
+    border-radius: 10px !important;
+}
+
+/* Loading animation preserved */
 .loading-bar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 10px;
+    height: 4px;
     z-index: 999999999;
-    background: var(--text-color);
+    background: linear-gradient(90deg, #087cff, #00e5ff, #087cff);
+    box-shadow: 0 0 12px rgba(0, 170, 255, 0.7);
     transform: translateX(100%);
     animation: shift-rightwards 1s ease-in-out infinite;
-    animation-delay: .3s;
+    animation-delay: 0.3s;
 }
 
 @keyframes shift-rightwards {
@@ -41,5 +139,30 @@ button.btn.ac_btn:hover {
     }
     100% {
         transform: translateX(100%);
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 576px) {
+    .contact__form {
+        padding: 20px 16px;
+        border-radius: 15px;
+    }
+
+    .contact__form button.btn.ac_btn {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact__form,
+    .contact__form .form-control,
+    .contact__form button.btn.ac_btn,
+    address a {
+        transition: none;
+    }
+
+    .loading-bar {
+        animation-duration: 2s;
     }
 }

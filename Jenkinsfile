@@ -53,7 +53,7 @@ pipeline {
             steps {
                 sh '''
                     set -eu
-                    kubectl set image deployment/${DEPLOYMENT} ${CONTAINER}=${APP_NAME}:jenkins-3
+                    kubectl set image deployment/${DEPLOYMENT} ${CONTAINER}=${APP_NAME}:jenkins-${BUILD_NUMBER}
                     kubectl rollout status deployment/${DEPLOYMENT} --timeout=120s
                     kubectl get service ${SERVICE}
                 '''

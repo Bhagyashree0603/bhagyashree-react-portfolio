@@ -143,8 +143,8 @@
   object-fit: contain !important;
   object-position: center center;
   padding: 8px;
-  transform: scale(1.05);
-  background: #fff;
+  transform: scale(1.42) translateY(24px);
+  background: #0b1120;
 }
 
 /* Keep images centered inside cards */

@@ -36,3 +36,17 @@ jenkins_home_backup.tar.gz
 terraform/tfplan
 terraform/refresh.tfplan
 jenkins-home-backup.tar.gz
+
+# Terraform state, plans, and local configuration
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/*.tfvars
+!terraform/terraform.tfvars.example
+terraform/tfplan
+terraform/refresh.tfplan
+terraform/*.tfplan
+
+# Local backup files
+*.backup
+*.bak
